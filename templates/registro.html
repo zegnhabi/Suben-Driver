@@ -4,29 +4,30 @@
             <ion-list id="registro-list5" class=" ">
                 <label class="item item-input " id="registro-input1" name="driverName">
                     <span class="input-label">Nombre</span>
-                    <input type="text" placeholder="">
+                    <input type="text" placeholder="" ng-model="data.name">
                 </label>
                 <label class="item item-input " id="registro-input4" name="driverLast">
                     <span class="input-label">Apellido</span>
-                    <input type="text" placeholder="">
+                    <input type="text" placeholder="" ng-model="data.last">
                 </label>
                 <label class="item item-input " id="registro-input2">
                     <span class="input-label">Email</span>
-                    <input type="email" placeholder="">
+                    <input type="email" placeholder="" ng-model="data.email">
                 </label>
                 <label class="item item-input " id="registro-input3">
                     <span class="input-label">Teléfono</span>
-                    <input type="tel" placeholder="">
+                    <input type="tel" placeholder="" ng-model="data.mobile">
                 </label>
                 <label class="item item-input " id="registro-input5">
                     <span class="input-label">Contraseña</span>
-                    <input type="password" placeholder="">
+                    <input type="password" placeholder="" ng-model="data.password">
                 </label>
             </ion-list>
         </form>
         <div id="registro-button-bar4" class=" button-bar ">
             <a ui-sref="subenDriver" id="registro-button10" class=" button button-stable  button-block ">Atras</a>
-            <a ui-sref="subenDriver" id="registro-button11" class=" button button-positive  button-block ">Registrar</a>
+            <a id="registro-button11" 
+            class=" button button-positive  button-block " ng-click="registerUser()">Registrar</a>
         </div>
     </ion-content>
 </ion-view>

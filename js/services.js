@@ -10,10 +10,12 @@ angular.module('app.services', [])
             var deferred = $q.defer();
             var promise = deferred.promise;
             // Simple GET request example:
+            if(name == '' || last == '' || email == '' || mobile == '' || password == '')
+                deferred.reject('No dejes en blanco algún campo. Favor de verificar!');
             $http({
               method: 'POST',
               url: 'http://vergui.xyz:8080/users',
-              data: {name: name, last: last, email: email, mobile: mobile, password: password, chofer: true}
+              data: {name: name, last: last, email: email, mobile: mobile, password: password, driver: true, photo: ''}
             }).then(function successCallback(response) {
                 // this callback will be called asynchronously
                 // when the response is available
@@ -22,7 +24,8 @@ angular.module('app.services', [])
                 }else{
                   deferred.resolve(response.data.message);
                 }
-              }, function errorCallback(response) {
+              }, function errorCallback(response) 
+              {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
                 deferred.reject(response.data.message);
